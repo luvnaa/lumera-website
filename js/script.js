@@ -9,10 +9,10 @@ if (menuButton != null) {
 
 // Fictional service prices
 var servicePrices = {
-    atlantis: 150,
-    mermaid: 100,
-    treasure: 120,
-    dragon: 200
+    atlantis: 15000,
+    mermaid: 10000,
+    treasure: 12000,
+    dragon: 20000
 };
 var serviceNames = {
     atlantis: "Atlantis Expedition",
@@ -20,8 +20,8 @@ var serviceNames = {
     treasure: "Mystic Treasure Hunt",
     dragon: "Sea Dragon Safari"
 };
-var conditionPrices = { normal: 0, challenging: 30, extreme: 60 };
-var urgencyPrices = { standard: 0, priority: 20, express: 40 };
+var conditionPrices = { normal: 0, challenging: 700, extreme: 1500 };
+var urgencyPrices = { standard: 0, priority: 300, express: 700 };
 
 // Show an error below an invalid field
 function showError(inputId, errorId, message) {
