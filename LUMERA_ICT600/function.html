@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Kiosk | LUMÉRA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/lumera-logo.png">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-inner">
+
+            <a class="brand" href="index.html">
+                <img class="brand-logo"
+                    src="images/lumera-logo.png"
+                    alt="LUMÉRA pearl monogram logo">
+
+                <span>
+                    LUMÉRA
+                    <small>MYTHICAL UNDERWATER ADVENTURE CENTRE</small>
+                </span>
+            </a>
+
+            <button class="menu-button" id="menuButton"
+                aria-label="Toggle menu">☰</button>
+
+            <nav id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="experiences.html">Experiences</a>
+                <a href="about.html">The Founder</a>
+                <a href="function.html" class="active">Kiosk</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page Title -->
+        <section class="page-title container">
+            <p class="eyebrow">BOOK YOUR ADVENTURE</p>
+
+            <h1>Plan Your <em>Adventure.</em></h1>
+
+            <p>
+                Choose a service, condition and urgency.
+                Click Calculate Estimate to see your result.
+            </p>
+        </section>
+
+        <!-- Kiosk Section -->
+        <section class="container kiosk-grid">
+
+            <!-- Form -->
+            <div class="form-card">
+
+                <h2>Adventure Cost Estimator</h2>
+
+                <form id="estimateForm" novalidate>
+
+                    <label for="customerName">Customer Name *</label>
+                    <input type="text" id="customerName"
+                        placeholder="Enter your name" required>
+                    <span class="error-message" id="nameError" aria-live="polite"></span>
+
+                    <label for="customerEmail">Customer Email *</label>
+                    <input type="email" id="customerEmail"
+                        placeholder="name@example.com" required>
+                    <span class="error-message" id="emailError" aria-live="polite"></span>
+
+                    <label for="service">Service Type *</label>
+                    <select id="service" required>
+                        <option value="">-- Select an adventure --</option>
+                        <option value="atlantis">
+                            Atlantis Expedition — RM150
+                        </option>
+                        <option value="mermaid">
+                            Mermaid Encounter — RM100
+                        </option>
+                        <option value="treasure">
+                            Mystic Treasure Hunt — RM120
+                        </option>
+                        <option value="dragon">
+                            Sea Dragon Safari — RM200
+                        </option>
+                    </select>
+                    <span class="error-message" id="serviceError" aria-live="polite"></span>
+
+                    <label for="condition">Condition *</label>
+                    <select id="condition" required>
+                        <option value="">-- Select condition --</option>
+                        <option value="normal">Normal (+RM0)</option>
+                        <option value="challenging">Challenging (+RM30)</option>
+                        <option value="extreme">Extreme (+RM60)</option>
+                    </select>
+                    <span class="error-message" id="conditionError" aria-live="polite"></span>
+
+                    <label for="urgency">Urgency *</label>
+                    <select id="urgency" required>
+                        <option value="">-- Select urgency --</option>
+                        <option value="standard">Standard (+RM0)</option>
+                        <option value="priority">Priority (+RM20)</option>
+                        <option value="express">Express (+RM40)</option>
+                    </select>
+                    <span class="error-message" id="urgencyError" aria-live="polite"></span>
+
+                    <!-- Form Buttons -->
+                    <div class="form-buttons">
+                        <button type="submit" class="btn">
+                            Calculate
+                        </button>
+
+                        <button type="reset" class="btn reset-btn">
+                            Reset
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Estimate Result -->
+            <div class="result-card">
+
+                <p class="eyebrow">YOUR ADVENTURE SUMMARY</p>
+                <h2>Your Adventure Estimate</h2>
+
+                <!-- Before Calculation -->
+                <div id="emptyResult" class="empty-result">
+                    <span>◇</span>
+                    <p>
+                        Your estimate will appear here
+                        after calculation.
+                    </p>
+                </div>
+
+                <!-- After Calculation -->
+                <div id="result" class="result" hidden>
+
+                    <!-- Customer Details -->
+                    <p>
+                        <span>Customer</span>
+                        <strong id="resultName"></strong>
+                    </p>
+
+                    <p>
+                        <span>Email</span>
+                        <strong id="resultEmail"></strong>
+                    </p>
+
+                    <!-- Service Name + Base Price -->
+                    <p>
+                        <span id="resultService"></span>
+                        <strong id="resultBase"></strong>
+                    </p>
+
+                    <!-- Condition + Fee -->
+                    <p>
+                        <span>
+                            Condition Fee
+                            (<span id="resultCondition"></span>)
+                        </span>
+                        <strong id="resultConditionFee"></strong>
+                    </p>
+
+                    <!-- Urgency + Fee -->
+                    <p>
+                        <span>
+                            Urgency Fee
+                            (<span id="resultUrgency"></span>)
+                        </span>
+                        <strong id="resultUrgencyFee"></strong>
+                    </p>
+
+                    <!-- Final Total -->
+                    <div class="final-total">
+                        <span>Final Estimated Amount</span>
+                        <strong id="resultTotal"></strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-inner">
+            <span>
+                LUMÉRA · Mythical Underwater Adventure Centre
+            </span>
+            <span>
+                ICT600 Individual Assignment · 2026
+            </span>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
